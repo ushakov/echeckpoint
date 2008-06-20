@@ -1,0 +1,6 @@
+
+for j in `LC_ALL=C seq 0.01 0.01 0.25`; do
+     python simulate.py 0 $j > a
+     python simulate.py 0 $j > a
+     python simulate.py 0 $j > a
+done

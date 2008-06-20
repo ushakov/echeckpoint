@@ -1,0 +1,436 @@
+
+apps.h,78
+#define APPS_H2,15
+#define APP_TEAM_NUMBERS 4,31
+#define APP_TIME_SET 5,58
+
+avrlibdefs.h,436
+#define AVRLIBDEFS_H23,784
+	#define	outb(outb28,928
+	#define	inb(inb31,990
+	#define	outw(outw34,1041
+	#define	inw(inw37,1103
+	#define BV(BV40,1152
+	#define cbi(cbi43,1204
+	#define sbi(sbi46,1266
+	#define cli(cli49,1327
+	#define sei(sei52,1398
+#define GNUC_PACKED 69,1906
+#define DDR(DDR72,1979
+#define PIN(PIN73,2054
+#define MIN(MIN76,2145
+#define MAX(MAX77,2181
+#define ABS(ABS78,2217
+#define PI	81,2269
+
+avrlibtypes.h,1074
+#define AVRLIBTYPES_H23,750
+	#define FALSE	27,814
+	#define TRUE	28,832
+typedef unsigned char  u08;u0832,892
+typedef   signed char  s08;s0833,921
+typedef unsigned short u16;u1634,950
+typedef   signed short s16;s1635,979
+typedef unsigned long  u32;u3236,1008
+typedef   signed long  s32;s3237,1037
+typedef unsigned long long u64;u6438,1066
+typedef   signed long long s64;s6439,1099
+#define MAX_U08	54,1543
+#define MAX_U16	55,1564
+#define MAX_U32	56,1587
+#define MIN_S08	60,1692
+#define MAX_S08	61,1714
+#define MIN_S16	62,1735
+#define MAX_S16	63,1759
+#define MIN_S32	64,1782
+#define MAX_S32	65,1811
+	typedef unsigned char   BOOL;BOOL69,1885
+	typedef unsigned char	BYTE;BYTE70,1917
+	typedef unsigned int	WORD;WORD71,1947
+	typedef unsigned long	DWORD;DWORD72,1976
+	typedef unsigned char	UCHAR;UCHAR74,2009
+	typedef unsigned int	UINT;UINT75,2040
+	typedef unsigned short  USHORT;USHORT76,2069
+	typedef unsigned long	ULONG;ULONG77,2103
+	typedef char			CHAR;CHAR79,2136
+	typedef int				INT;INT80,2159
+	typedef long			LONG;LONG81,2181
+
+beep.c,64
+void beep_init(7,81
+void beep_yes(11,136
+void beep_no(21,313
+
+beep.h,20
+#define BEEP_H2,15
+
+config.h,766
+#define CONFIG_H2,17
+#define SCAN_DDR 5,100
+#define SCAN_PORT 6,135
+#define SCAN_SHIFT 7,171
+#define KEY_DDR 10,270
+#define KEY_PORT 11,305
+#define KEY_PORTIN 12,341
+#define KEY_SHIFT 13,376
+#define DSP_DDR 16,425
+#define DSP_PORT 17,460
+#define DSP_ENABLE 18,496
+#define DSP_CLOCK 19,528
+#define DSP_DATA 20,560
+#define BEEP_DDR 23,603
+#define BEEP_PORT 24,638
+#define BEEP_PIN 25,674
+#define LED_DDR 28,714
+#define LED_PORT 29,749
+#define LED_PIN 30,785
+#define DALLAS_PORT 34,830
+#define DALLAS_DDR 35,866
+#define DALLAS_PORTIN 36,901
+#define DALLAS_PIN 37,936
+#define SPI_PORT 40,976
+#define SPI_DDR 41,1012
+#define SPI_PORTIN 42,1047
+#define SPI_SCK 43,1082
+#define SPI_MISO 44,1114
+#define SPI_MOSI 45,1146
+#define SPI_SS 46,1178
+
+cptest.c,18
+void main(17,192
+
+dallas_bitbang_backup.c,692
+static u08 last_discrep 20,738
+static u08 done_flag 21,803
+u08 dallas_crc;23,860
+u08 dallas_crc_table[24,911
+void dallasDelayUs(53,2484
+void dallasInit(60,2610
+u08 dallasReset(67,2716
+u08 dallasReadBit(108,3628
+void dallasWriteBit(136,4129
+u08 dallasReadByte(159,4548
+void dallasWriteByte(181,4784
+u08 dallasReadRAM(199,4993
+	union int16_var_Uint16_var_U204,5089
+u08 dallasWriteRAM(236,5734
+	union int16_var_Uint16_var_U241,5831
+void dallasWaitUntilDone(283,6666
+u08 dallasReadROM(293,6796
+u08 dallasMatchROM(312,7146
+void dallasPrintROM(331,7483
+u08 dallasAddressCheck(352,7825
+u08 dallasCRC(371,8140
+u08 dallasFindDevices(378,8281
+u08 dallasFindNextDevice(402,8877
+
+dallas_bitbang.c,455
+u08 dallas_crc;20,738
+u08 dallas_crc_table[21,789
+void dallasDelayUs(43,1969
+void dallasInit(50,2095
+u08 dallasReset(57,2201
+u08 dallasReadBit(98,3113
+void dallasWriteBit(126,3614
+u08 dallasReadByte(149,4033
+void dallasWriteByte(171,4269
+u08 dallasReadRAM(189,4478
+u08 dallasWriteRAM(207,4831
+uint8_t dallasTimeSet(264,5990
+uint32_t dallasTimeRead(291,6627
+u08 dallasReadROM(310,7017
+u08 dallasAddressCheck(349,7810
+u08 dallasCRC(364,8077
+
+dallasconf.h,60
+#define DALLASCONF_H2,21
+#define DALLAS_MAX_DEVICES 7,158
+
+dallas.h,1159
+#define dallas_h21,852
+#define dallas_rev	28,1073
+#define DALLAS_MAX_DEVICES	36,1247
+#define DALLAS_FAMILY_IDX	41,1344
+#define DALLAS_A0_IDX	42,1391
+#define DALLAS_A1_IDX	43,1418
+#define DALLAS_A2_IDX	44,1445
+#define DALLAS_A3_IDX	45,1472
+#define DALLAS_A4_IDX	46,1499
+#define DALLAS_A5_IDX	47,1526
+#define DALLAS_CRC_IDX	48,1553
+#define DALLAS_NO_ERROR	51,1625
+#define DALLAS_PRESENCE	52,1671
+#define DALLAS_NO_PRESENCE	53,1729
+#define DALLAS_VERIFY_ERROR	54,1792
+#define DALLAS_ADDRESS_ERROR	55,1857
+#define DALLAS_CRC_ERROR	56,1952
+#define DALLAS_DEVICE_ERROR	57,2022
+#define DALLAS_NULL_POINTER	58,2083
+#define DALLAS_ZERO_LEN	59,2160
+#define DALLAS_BUS_ERROR	60,2247
+#define DALLAS_RESOLUTION_ERROR	66,2553
+#define DALLAS_INVALID_CHANNEL	67,2643
+#define DALLAS_FORMAT_ERROR	68,2721
+#define DALLAS_READ_ROM	71,2825
+#define DALLAS_MATCH_ROM	72,2857
+#define DALLAS_SKIP_ROM	73,2889
+#define DALLAS_SEARCH_ROM	74,2921
+#define DALLAS_CONDITIONAL_SEARCH	75,2954
+#define DALLAS_READ_MEMORY	76,2993
+#define DALLAS_WRITE_MEMORY	77,3027
+typedef union dallas_rom_id_Udallas_rom_id_U83,3234
+} dallas_rom_id_T;dallas_rom_id_T87,3295
+
+data.h,164
+#define DATA_H2,15
+typedef struct timestamp timestamp6,52
+} timestamp;timestamp10,174
+typedef struct team_info team_info12,188
+} team_info;team_info16,273
+
+delay.c,63
+void delay_ms 7,66
+void delay_s 16,291
+void delay_us(22,375
+
+delay.h,21
+#define DELAY_H2,16
+
+eeprom.c,52
+void eeprom_write 6,69
+uint8_t eeprom_read 22,377
+
+eeprom.h,82
+#define EEPROM_H2,17
+#define EEP_MAXPAGE_H 11,162
+#define EEP_MAXPAGE_L 12,186
+
+flash.c,439
+#define SPI_START 9,120
+#define SPI_END 10,169
+void flash_init(36,877
+void flash_activate(39,900
+uint8_t flash_transmit(52,1233
+uint8_t flash_wait(59,1337
+uint32_t flash_id(70,1509
+union address address87,1867
+static void op_page 92,1921
+void flash_auto_page_rewrite(107,2205
+void flash_get_buffer(111,2279
+void flash_put_buffer(119,2423
+void flash_read(128,2590
+void flash_write(148,3003
+void flash_read_directly(168,3405
+
+flash.h,21
+#define FLASH_H2,16
+
+global.h,78
+#define GLOBAL_H22,739
+#define F_CPU 39,1347
+#define CYCLES_PER_US 42,1486
+
+keyled.c,405
+uint8_t current_tick;8,103
+uint8_t display[9,125
+uint8_t digitforms[19,350
+uint8_t key_pressed 27,506
+uint8_t key;28,531
+void keyled_activate(34,620
+void keyled_init(42,819
+uint8_t decode_key(58,1151
+void keyled_tick(80,1704
+void keyled_set_display(121,2733
+void keyled_set_display_num(165,3870
+void keyled_set_dots 187,4206
+uint8_t keyled_keypressed(199,4442
+uint8_t keyled_getkey(205,4600
+
+keyled.h,22
+#define KEYLED_H2,17
+
+lcd.c,919
+const uint8_t A0 11,144
+const uint8_t RW 12,176
+const uint8_t E 13,208
+const uint8_t D7 14,240
+const uint8_t D6 15,272
+const uint8_t D5 16,304
+const uint8_t D4 17,336
+const uint8_t DATA 19,369
+#define LCD_OUT 21,446
+#define LCD_IN 22,468
+#define LCD_DDR 23,488
+static void lcd_prepare_write 25,510
+static void lcd_prepare_read 30,569
+static uint8_t lcd_read_internal(36,650
+static void lcd_wait_status(56,1014
+static void lcd_write_command_internal 63,1150
+void lcd_write_command 85,1556
+uint8_t lcd_read_status 91,1664
+void lcd_write_data 96,1730
+uint8_t lcd_read_data 102,1835
+const int dms 111,1955
+const int dus 112,1975
+void lcd_setup(114,1997
+static int cursor 153,2635
+void lcd_clear(155,2659
+static void shift(161,2724
+void lcd_log_char 178,3103
+void lcd_log_line 196,3393
+void lcd_log_num 203,3500
+void lcd_log_numx 213,3715
+void lcd_set_str 225,3994
+void lcd_set_str2 234,4143
+
+lcd.h,19
+#define LCD_H2,14
+
+led.c,143
+void led_init(7,81
+void led_on(11,133
+void led_off(15,184
+void led_flash 19,237
+void led_flash_digit 27,347
+void led_flash_number 35,492
+
+led.h,19
+#define LED_H2,14
+
+misc.c,20
+void put_int 9,112
+
+misc.h,42
+#define MISC_H2,15
+#define nop(nop6,68
+
+put.c,170
+void putProgR(7,104
+void putRam(14,228
+void putCRLF(21,336
+void putInt(25,377
+void putHex(39,689
+void putRevHex(60,1114
+void putHexF(73,1334
+void putChar(92,1777
+
+put.h,50
+#define PUT_H2,14
+#define putProg(putProg8,110
+
+team_numbers.c,300
+team_info info;20,272
+uint8_t have_button;21,288
+int16_t pages_initialized;23,310
+int16_t current_page;24,337
+void flush_block(26,360
+void pick_block(31,446
+uint8_t have_number(60,1152
+void put_team(75,1503
+void dump_info(83,1717
+void team_numbers_init(109,2253
+void team_numbers(117,2464
+
+team_numbers.h,28
+#define TEAM_NUMBERS_H2,23
+
+term.c,284
+static uint32_t n;8,94
+static uint8_t state 14,255
+static uint8_t flags;21,412
+void term_init(23,435
+void term_tick(30,533
+uint8_t term_got_command(81,1390
+uint8_t term_got_number(86,1486
+uint8_t term_got_reset(91,1581
+uint32_t term_value(96,1670
+void term_message(100,1711
+
+term.h,20
+#define TERM_H2,15
+
+terminal.c,103
+uint8_t current_app;28,382
+uint16_t skip_counter;29,403
+uint8_t got_button;30,426
+void main(32,447
+
+test.c,177
+dallas_rom_id_T last[19,257
+u08 count 20,283
+uint16_t off 27,377
+uint16_t page 28,395
+void commit_page(30,415
+void commit(36,496
+void dump_pages(52,753
+int main 74,1099
+
+time.c,186
+uint32_t time;7,101
+uint16_t last_check;8,146
+ISR(10,218
+void time_init(16,289
+void time_check(29,566
+uint32_t time_get(39,743
+timestamp time_get_ts(44,817
+void time_set(57,1069
+
+time.h,20
+#define TIME_H2,15
+
+time_set.c,298
+#define ST_DAY 21,269
+#define ST_TIME 22,286
+#define ST_DONE 23,304
+#define ST_NUMBER 24,322
+static uint8_t state;25,342
+uint8_t day,27,365
+uint8_t day, hour,27,365
+uint8_t day, hour, min;27,365
+uint8_t mmb;28,389
+void timeset_init(30,403
+void timeset_wakeup(37,488
+void timeset(42,560
+
+time_set.h,24
+#define TIME_SET_H2,19
+
+tt.c,16
+int main 9,105
+
+uart.c,315
+static int errors;9,123
+#define BUFLEN 11,143
+#define BUFLENMASK 12,161
+static uint8_t buffer[13,185
+static uint8_t volatile bstart,14,216
+static uint8_t volatile bstart, blen;14,216
+ISR(16,255
+void uart_init(24,400
+void uart_set_baud_rate(38,734
+void uart_write_byte 48,991
+int16_t uart_getchar(53,1087
+
+uart.h,117
+#define UART_H2,15
+#define UART_DOR 9,155
+#define UART_FE 10,176
+#define UART_PE 11,197
+#define UART_BOR 12,218
+
+vt100.c,82
+void vt100Init(35,1034
+void vt100ClearScreen(42,1147
+void vt100SetAttr(48,1221
+
+vt100.h,308
+#define VT100_H34,1433
+#define VT100_ATTR_OFF	40,1524
+#define VT100_BOLD	41,1551
+#define VT100_USCORE	42,1575
+#define VT100_BLINK	43,1600
+#define VT100_REVERSE	44,1625
+#define VT100_BOLD_OFF	45,1651
+#define VT100_USCORE_OFF	46,1679
+#define VT100_BLINK_OFF	47,1708
+#define VT100_REVERSE_OFF	48,1737
