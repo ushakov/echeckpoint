@@ -1,0 +1,21 @@
+# ignore generated files
+*.expand
+*.lst
+*.hex
+*.eep
+*.elf
+*.map
+*.bin
+all-code.c
+all-static.h
+
+# we don't care about dotfiles and backups
+.*
+*~
+# except for .gitignore
+!.gitignore
+
+# misc
+*.dot
+*.ps
+*.pdf

@@ -1,0 +1,9 @@
+# don't need logs
+log-*
+log
+res-*
+tab-*
+
+# don't need backups and compilation output
+*.pyc
+*~
