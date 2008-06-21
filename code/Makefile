@@ -28,6 +28,8 @@ ASFLAGS += -mmcu=$(MCU)
 	$(AS) -c $(ASFLAGS) -I$(INCDIR) $< -o $@
 
 %.elf:
+	git-add $^
+	git-commit -m "Autocmmit when making $@" "*"
 	egrep -h '^[a-zA-Z_0-9]+ +[a-zA-Z_0-9]+ ?\([a-zA-Z_0-9, *]*\);' $(patsubst %.c,%.h,$^) | sed 's|^|static |' > all-static.h
 	cat $^ > all-code.c
 	$(CC) all.c $(CPFLAGS) $(LIB) -Wl,-Map=$*.map,--cref -mmcu=$(MCU) -o $@
