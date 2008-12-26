@@ -10,6 +10,7 @@ RM	= rm -f
 RN	= mv
 CP	= cp
 OBJCOPY	= avr-objcopy
+OBJDUMP	= avr-objdump
 SIZE	= avr-size
 INCDIR	= .
 FORMAT = ihex	
@@ -52,6 +53,10 @@ ASFLAGS += -mmcu=$(MCU)
 		--change-section-address .eeprom-0x810000 \
 		$< $@
 
+%.dmp: %.elf
+	$(OBJDUMP) -h -S $< > $@
+
+
 #################################################################
 # Description of source files starts here
 
@@ -82,7 +87,7 @@ cptest.elf: $(CPTEST_SRC:.c=.o) $(COMMON_SRC:.c=.o)
 
 terminal.elf: $(TERMINAL_SRC:.c=.o) $(COMMON_SRC:.c=.o)
 
-$(TARGETS): %: %.elf %.bin %.hex %.eep
+$(TARGETS): %: %.elf %.bin %.hex %.eep %.dmp
 	$(SIZE) $*.elf
 	@echo $< done
 
