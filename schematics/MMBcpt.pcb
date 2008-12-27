@@ -1,5 +1,5 @@
 # release: pcb 20080202
-# date:    Sat Dec 27 02:32:28 2008
+# date:    Sat Dec 27 17:03:31 2008
 # user:    sla (Slava Zavjalov,,,)
 # host:    slav
 
@@ -1303,7 +1303,7 @@ Layer(7 "signal3")
 	Line[55000 235000 55000 242500 2500 5000 "clearline"]
 	Line[112500 250000 70000 250000 2500 5000 "clearline"]
 	Line[115000 255000 122500 247500 2500 5000 "clearline"]
-	Line[91910 80532 91910 205532 2500 5000 "clearline"]
+	Line[65000 255000 115000 255000 2500 2000 "clearline"]
 	Line[45000 235000 45000 252500 2500 5000 "clearline"]
 	Line[70000 250000 62500 242500 2500 5000 "clearline"]
 	Line[57461 250000 57461 261811 2500 2000 "clearline"]
@@ -1312,9 +1312,8 @@ Layer(7 "signal3")
 	Line[51555 244094 51555 259843 2500 2000 "clearline"]
 	Line[51555 259843 45650 265748 2500 2000 "clearline"]
 	Line[50000 270000 65000 255000 2500 2000 "clearline"]
-	Line[65000 255000 115000 255000 2500 2000 "clearline"]
-	Text[47500 82500 1 109 "RES" ""]
 	Text[83032 143031 0 109 "+" ""]
+	Text[47500 82500 1 109 "RES" ""]
 )
 Layer(8 "signal4")
 (
